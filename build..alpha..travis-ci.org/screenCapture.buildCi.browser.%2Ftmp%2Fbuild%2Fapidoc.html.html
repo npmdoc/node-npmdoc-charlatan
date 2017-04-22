@@ -1,0 +1,5035 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/nodeca/charlatan">charlatan (v1.1.0)</a>
+</h1>
+<h4>Fake identities generator for node.js (names, addresses, phones, IPs and others). Supports multiple languages.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan">module charlatan</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.addLocale">
+            function <span class="apidocSignatureSpan">charlatan.</span>addLocale
+            <span class="apidocSignatureSpan">(name, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.bothify">
+            function <span class="apidocSignatureSpan">charlatan.</span>bothify
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.fetch">
+            function <span class="apidocSignatureSpan">charlatan.</span>fetch
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.getAllLocales">
+            function <span class="apidocSignatureSpan">charlatan.</span>getAllLocales
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.getLocale">
+            function <span class="apidocSignatureSpan">charlatan.</span>getLocale
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.letterify">
+            function <span class="apidocSignatureSpan">charlatan.</span>letterify
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.numerify">
+            function <span class="apidocSignatureSpan">charlatan.</span>numerify
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.parse">
+            function <span class="apidocSignatureSpan">charlatan.</span>parse
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.regexify">
+            function <span class="apidocSignatureSpan">charlatan.</span>regexify
+            <span class="apidocSignatureSpan">(re)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.setLocale">
+            function <span class="apidocSignatureSpan">charlatan.</span>setLocale
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.translate">
+            function <span class="apidocSignatureSpan">charlatan.</span>translate
+            <span class="apidocSignatureSpan">(key, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>Address</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>App</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>Avatar</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>Bitcoin</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>Business</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>Code</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>Commerce</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>Company</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>Date</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>Finance</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>Hacker</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>Helpers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>Internet</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>Lorem</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>Name</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>Number</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>PhoneNumber</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>Team</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>index</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>locales</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>locales_browser</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan.Address">module charlatan.Address</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Address.buildingNumber">
+            function <span class="apidocSignatureSpan">charlatan.Address.</span>buildingNumber
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Address.city">
+            function <span class="apidocSignatureSpan">charlatan.Address.</span>city
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Address.cityPrefix">
+            function <span class="apidocSignatureSpan">charlatan.Address.</span>cityPrefix
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Address.citySuffix">
+            function <span class="apidocSignatureSpan">charlatan.Address.</span>citySuffix
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Address.country">
+            function <span class="apidocSignatureSpan">charlatan.Address.</span>country
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Address.countryCode">
+            function <span class="apidocSignatureSpan">charlatan.Address.</span>countryCode
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Address.latitude">
+            function <span class="apidocSignatureSpan">charlatan.Address.</span>latitude
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Address.longitude">
+            function <span class="apidocSignatureSpan">charlatan.Address.</span>longitude
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Address.postcode">
+            function <span class="apidocSignatureSpan">charlatan.Address.</span>postcode
+            <span class="apidocSignatureSpan">(state_abbr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Address.secondaryAddress">
+            function <span class="apidocSignatureSpan">charlatan.Address.</span>secondaryAddress
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Address.state">
+            function <span class="apidocSignatureSpan">charlatan.Address.</span>state
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Address.stateAbbr">
+            function <span class="apidocSignatureSpan">charlatan.Address.</span>stateAbbr
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Address.streetAddress">
+            function <span class="apidocSignatureSpan">charlatan.Address.</span>streetAddress
+            <span class="apidocSignatureSpan">(include_secondary)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Address.streetName">
+            function <span class="apidocSignatureSpan">charlatan.Address.</span>streetName
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Address.streetSuffix">
+            function <span class="apidocSignatureSpan">charlatan.Address.</span>streetSuffix
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Address.timeZone">
+            function <span class="apidocSignatureSpan">charlatan.Address.</span>timeZone
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Address.zip">
+            function <span class="apidocSignatureSpan">charlatan.Address.</span>zip
+            <span class="apidocSignatureSpan">(state_abbr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Address.zipCode">
+            function <span class="apidocSignatureSpan">charlatan.Address.</span>zipCode
+            <span class="apidocSignatureSpan">(state_abbr)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan.App">module charlatan.App</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.App.author">
+            function <span class="apidocSignatureSpan">charlatan.App.</span>author
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.App.name">
+            function <span class="apidocSignatureSpan">charlatan.App.</span>name
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.App.version">
+            function <span class="apidocSignatureSpan">charlatan.App.</span>version
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan.Avatar">module charlatan.Avatar</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Avatar.image">
+            function <span class="apidocSignatureSpan">charlatan.Avatar.</span>image
+            <span class="apidocSignatureSpan">(slug, size, format)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan.Bitcoin">module charlatan.Bitcoin</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Bitcoin._addressFor">
+            function <span class="apidocSignatureSpan">charlatan.Bitcoin.</span>_addressFor
+            <span class="apidocSignatureSpan">(network, rnd)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Bitcoin._base58">
+            function <span class="apidocSignatureSpan">charlatan.Bitcoin.</span>_base58
+            <span class="apidocSignatureSpan">(buf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Bitcoin._divide">
+            function <span class="apidocSignatureSpan">charlatan.Bitcoin.</span>_divide
+            <span class="apidocSignatureSpan">(buf, n)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Bitcoin.address">
+            function <span class="apidocSignatureSpan">charlatan.Bitcoin.</span>address
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Bitcoin.testnetAddress">
+            function <span class="apidocSignatureSpan">charlatan.Bitcoin.</span>testnetAddress
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan.Business">module charlatan.Business</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Business.creditCardExpiryDate">
+            function <span class="apidocSignatureSpan">charlatan.Business.</span>creditCardExpiryDate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Business.creditCardNumber">
+            function <span class="apidocSignatureSpan">charlatan.Business.</span>creditCardNumber
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Business.creditCardType">
+            function <span class="apidocSignatureSpan">charlatan.Business.</span>creditCardType
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan.Code">module charlatan.Code</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Code.ean">
+            function <span class="apidocSignatureSpan">charlatan.Code.</span>ean
+            <span class="apidocSignatureSpan">(base)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Code.isbn">
+            function <span class="apidocSignatureSpan">charlatan.Code.</span>isbn
+            <span class="apidocSignatureSpan">(base)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Code.rut">
+            function <span class="apidocSignatureSpan">charlatan.Code.</span>rut
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan.Commerce">module charlatan.Commerce</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Commerce.color">
+            function <span class="apidocSignatureSpan">charlatan.Commerce.</span>color
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Commerce.department">
+            function <span class="apidocSignatureSpan">charlatan.Commerce.</span>department
+            <span class="apidocSignatureSpan">(max, fixed_amount)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Commerce.price">
+            function <span class="apidocSignatureSpan">charlatan.Commerce.</span>price
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Commerce.productName">
+            function <span class="apidocSignatureSpan">charlatan.Commerce.</span>productName
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan.Company">module charlatan.Company</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Company.bs">
+            function <span class="apidocSignatureSpan">charlatan.Company.</span>bs
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Company.catchPhrase">
+            function <span class="apidocSignatureSpan">charlatan.Company.</span>catchPhrase
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Company.dunsNumber">
+            function <span class="apidocSignatureSpan">charlatan.Company.</span>dunsNumber
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Company.ein">
+            function <span class="apidocSignatureSpan">charlatan.Company.</span>ein
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Company.logo">
+            function <span class="apidocSignatureSpan">charlatan.Company.</span>logo
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Company.name">
+            function <span class="apidocSignatureSpan">charlatan.Company.</span>name
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Company.suffix">
+            function <span class="apidocSignatureSpan">charlatan.Company.</span>suffix
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan.Date">module charlatan.Date</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Date.backward">
+            function <span class="apidocSignatureSpan">charlatan.Date.</span>backward
+            <span class="apidocSignatureSpan">(days)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Date.between">
+            function <span class="apidocSignatureSpan">charlatan.Date.</span>between
+            <span class="apidocSignatureSpan">(from, to)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Date.birthday">
+            function <span class="apidocSignatureSpan">charlatan.Date.</span>birthday
+            <span class="apidocSignatureSpan">(min_age, max_age)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Date.forward">
+            function <span class="apidocSignatureSpan">charlatan.Date.</span>forward
+            <span class="apidocSignatureSpan">(days)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan.Finance">module charlatan.Finance</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Finance.creditCard">
+            function <span class="apidocSignatureSpan">charlatan.Finance.</span>creditCard
+            <span class="apidocSignatureSpan">(types)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan.Hacker">module charlatan.Hacker</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Hacker.abbreviation">
+            function <span class="apidocSignatureSpan">charlatan.Hacker.</span>abbreviation
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Hacker.adjective">
+            function <span class="apidocSignatureSpan">charlatan.Hacker.</span>adjective
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Hacker.ingverb">
+            function <span class="apidocSignatureSpan">charlatan.Hacker.</span>ingverb
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Hacker.noun">
+            function <span class="apidocSignatureSpan">charlatan.Hacker.</span>noun
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Hacker.saySomethingSmart">
+            function <span class="apidocSignatureSpan">charlatan.Hacker.</span>saySomethingSmart
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Hacker.verb">
+            function <span class="apidocSignatureSpan">charlatan.Hacker.</span>verb
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan.Helpers">module charlatan.Helpers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Helpers.capitalize">
+            function <span class="apidocSignatureSpan">charlatan.Helpers.</span>capitalize
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Helpers.rand">
+            function <span class="apidocSignatureSpan">charlatan.Helpers.</span>rand
+            <span class="apidocSignatureSpan">(max, min)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Helpers.range">
+            function <span class="apidocSignatureSpan">charlatan.Helpers.</span>range
+            <span class="apidocSignatureSpan">(from, to)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Helpers.sample">
+            function <span class="apidocSignatureSpan">charlatan.Helpers.</span>sample
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Helpers.shuffle">
+            function <span class="apidocSignatureSpan">charlatan.Helpers.</span>shuffle
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Helpers.titleize">
+            function <span class="apidocSignatureSpan">charlatan.Helpers.</span>titleize
+            <span class="apidocSignatureSpan">(title)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan.Internet">module charlatan.Internet</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Internet.IPv4">
+            function <span class="apidocSignatureSpan">charlatan.Internet.</span>IPv4
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Internet.IPv6">
+            function <span class="apidocSignatureSpan">charlatan.Internet.</span>IPv6
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Internet.deviceToken">
+            function <span class="apidocSignatureSpan">charlatan.Internet.</span>deviceToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Internet.domainName">
+            function <span class="apidocSignatureSpan">charlatan.Internet.</span>domainName
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Internet.domainSuffix">
+            function <span class="apidocSignatureSpan">charlatan.Internet.</span>domainSuffix
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Internet.domainWord">
+            function <span class="apidocSignatureSpan">charlatan.Internet.</span>domainWord
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Internet.email">
+            function <span class="apidocSignatureSpan">charlatan.Internet.</span>email
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Internet.freeEmail">
+            function <span class="apidocSignatureSpan">charlatan.Internet.</span>freeEmail
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Internet.macAddress">
+            function <span class="apidocSignatureSpan">charlatan.Internet.</span>macAddress
+            <span class="apidocSignatureSpan">(prefix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Internet.password">
+            function <span class="apidocSignatureSpan">charlatan.Internet.</span>password
+            <span class="apidocSignatureSpan">(minLength, maxLength)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Internet.safeEmail">
+            function <span class="apidocSignatureSpan">charlatan.Internet.</span>safeEmail
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Internet.slug">
+            function <span class="apidocSignatureSpan">charlatan.Internet.</span>slug
+            <span class="apidocSignatureSpan">(words, glue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Internet.url">
+            function <span class="apidocSignatureSpan">charlatan.Internet.</span>url
+            <span class="apidocSignatureSpan">(host, path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Internet.userName">
+            function <span class="apidocSignatureSpan">charlatan.Internet.</span>userName
+            <span class="apidocSignatureSpan">(specifier, separators)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan.Lorem">module charlatan.Lorem</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Lorem.character">
+            function <span class="apidocSignatureSpan">charlatan.Lorem.</span>character
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Lorem.characters">
+            function <span class="apidocSignatureSpan">charlatan.Lorem.</span>characters
+            <span class="apidocSignatureSpan">(charCount)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Lorem.paragraph">
+            function <span class="apidocSignatureSpan">charlatan.Lorem.</span>paragraph
+            <span class="apidocSignatureSpan">(sentenceCount, supplemental, randomSentencesToAdd)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Lorem.paragraphs">
+            function <span class="apidocSignatureSpan">charlatan.Lorem.</span>paragraphs
+            <span class="apidocSignatureSpan">(paragraphCount, supplemental)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Lorem.sentence">
+            function <span class="apidocSignatureSpan">charlatan.Lorem.</span>sentence
+            <span class="apidocSignatureSpan">(wordCount, supplemental, randomWordsToAdd)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Lorem.sentences">
+            function <span class="apidocSignatureSpan">charlatan.Lorem.</span>sentences
+            <span class="apidocSignatureSpan">(sentenceCount, supplemental)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Lorem.text">
+            function <span class="apidocSignatureSpan">charlatan.Lorem.</span>text
+            <span class="apidocSignatureSpan">(paragraphCount, supplemental, glue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Lorem.word">
+            function <span class="apidocSignatureSpan">charlatan.Lorem.</span>word
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Lorem.words">
+            function <span class="apidocSignatureSpan">charlatan.Lorem.</span>words
+            <span class="apidocSignatureSpan">(wordCount, supplemental)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan.Name">module charlatan.Name</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Name.firstName">
+            function <span class="apidocSignatureSpan">charlatan.Name.</span>firstName
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Name.lastName">
+            function <span class="apidocSignatureSpan">charlatan.Name.</span>lastName
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Name.name">
+            function <span class="apidocSignatureSpan">charlatan.Name.</span>name
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Name.prefix">
+            function <span class="apidocSignatureSpan">charlatan.Name.</span>prefix
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Name.suffix">
+            function <span class="apidocSignatureSpan">charlatan.Name.</span>suffix
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Name.title">
+            function <span class="apidocSignatureSpan">charlatan.Name.</span>title
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan.Number">module charlatan.Number</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Number.between">
+            function <span class="apidocSignatureSpan">charlatan.Number.</span>between
+            <span class="apidocSignatureSpan">(from, to)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Number.decimal">
+            function <span class="apidocSignatureSpan">charlatan.Number.</span>decimal
+            <span class="apidocSignatureSpan">(l_digits, r_digits)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Number.digit">
+            function <span class="apidocSignatureSpan">charlatan.Number.</span>digit
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Number.hexadecimal">
+            function <span class="apidocSignatureSpan">charlatan.Number.</span>hexadecimal
+            <span class="apidocSignatureSpan">(digits)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Number.negative">
+            function <span class="apidocSignatureSpan">charlatan.Number.</span>negative
+            <span class="apidocSignatureSpan">(from, to)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Number.number">
+            function <span class="apidocSignatureSpan">charlatan.Number.</span>number
+            <span class="apidocSignatureSpan">(digits)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Number.positive">
+            function <span class="apidocSignatureSpan">charlatan.Number.</span>positive
+            <span class="apidocSignatureSpan">(from, to)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan.PhoneNumber">module charlatan.PhoneNumber</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.PhoneNumber.areaCode">
+            function <span class="apidocSignatureSpan">charlatan.PhoneNumber.</span>areaCode
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.PhoneNumber.cellPhone">
+            function <span class="apidocSignatureSpan">charlatan.PhoneNumber.</span>cellPhone
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.PhoneNumber.exchangeCode">
+            function <span class="apidocSignatureSpan">charlatan.PhoneNumber.</span>exchangeCode
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.PhoneNumber.extension">
+            function <span class="apidocSignatureSpan">charlatan.PhoneNumber.</span>extension
+            <span class="apidocSignatureSpan">(length)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.PhoneNumber.phoneNumber">
+            function <span class="apidocSignatureSpan">charlatan.PhoneNumber.</span>phoneNumber
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.PhoneNumber.subscriberNumber">
+            function <span class="apidocSignatureSpan">charlatan.PhoneNumber.</span>subscriberNumber
+            <span class="apidocSignatureSpan">(length)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan.Team">module charlatan.Team</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Team.creature">
+            function <span class="apidocSignatureSpan">charlatan.Team.</span>creature
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Team.name">
+            function <span class="apidocSignatureSpan">charlatan.Team.</span>name
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.Team.state">
+            function <span class="apidocSignatureSpan">charlatan.Team.</span>state
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan.index">module charlatan.index</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.index.addLocale">
+            function <span class="apidocSignatureSpan">charlatan.index.</span>addLocale
+            <span class="apidocSignatureSpan">(name, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.index.bothify">
+            function <span class="apidocSignatureSpan">charlatan.index.</span>bothify
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.index.fetch">
+            function <span class="apidocSignatureSpan">charlatan.index.</span>fetch
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.index.getAllLocales">
+            function <span class="apidocSignatureSpan">charlatan.index.</span>getAllLocales
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.index.getLocale">
+            function <span class="apidocSignatureSpan">charlatan.index.</span>getLocale
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.index.letterify">
+            function <span class="apidocSignatureSpan">charlatan.index.</span>letterify
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.index.numerify">
+            function <span class="apidocSignatureSpan">charlatan.index.</span>numerify
+            <span class="apidocSignatureSpan">(source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.index.parse">
+            function <span class="apidocSignatureSpan">charlatan.index.</span>parse
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.index.regexify">
+            function <span class="apidocSignatureSpan">charlatan.index.</span>regexify
+            <span class="apidocSignatureSpan">(re)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.index.setLocale">
+            function <span class="apidocSignatureSpan">charlatan.index.</span>setLocale
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.index.translate">
+            function <span class="apidocSignatureSpan">charlatan.index.</span>translate
+            <span class="apidocSignatureSpan">(key, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.index.</span>Address</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.index.</span>App</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.index.</span>Avatar</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.index.</span>Bitcoin</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.index.</span>Business</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.index.</span>Code</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.index.</span>Commerce</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.index.</span>Company</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.index.</span>Date</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.index.</span>Finance</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.index.</span>Hacker</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.index.</span>Helpers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.index.</span>Internet</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.index.</span>Lorem</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.index.</span>Name</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.index.</span>Number</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.index.</span>PhoneNumber</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.index.</span>Team</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan.locales">module charlatan.locales</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.locales.addLocale">
+            function <span class="apidocSignatureSpan">charlatan.locales.</span>addLocale
+            <span class="apidocSignatureSpan">(name, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.</span>locales</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.charlatan.locales_browser">module charlatan.locales_browser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.charlatan.locales_browser.addLocale">
+            function <span class="apidocSignatureSpan">charlatan.locales_browser.</span>addLocale
+            <span class="apidocSignatureSpan">(name, data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">charlatan.locales_browser.</span>locales</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan" id="apidoc.module.charlatan">module charlatan</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.addLocale" id="apidoc.element.charlatan.addLocale">
+        function <span class="apidocSignatureSpan">charlatan.</span>addLocale
+        <span class="apidocSignatureSpan">(name, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addLocale(name, data) {
+  // if data not set, then check available
+  if (typeof data === 'undefined') {
+    if (!available_locales[name]) {
+      throw new Error('Locale not found:' + name);
+    }
+
+    data = available_locales[name];
+
+    // load base language, if exists
+    var lang = name.split('-')[0];
+
+    if (name !== lang &amp;&amp; available_locales[lang]) {
+      addLocale(lang);
+    }
+  }
+
+  // data in file
+  if (typeof data === 'string') {
+    if (!fs.existsSync(data)) {
+      throw new Error('Config ' + data + ' not found');
+    }
+    data = yaml.safeLoad(fs.readFileSync(data, 'utf8'))[name];
+
+  }
+  locales[name] = data;
+
+  // compatibility layer for ruby Faker: we DON'T use intermediate
+  // level `faker`, but wish to have universal localizations.
+  // So, if `faker` section exists then its children moved 1 level up.
+  if (data.faker) {
+    Object.keys(data.faker).forEach(function (k) {
+      locales[name][k] = data.faker[k];
+    });
+  }
+
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Charlatan.Name.name();
+```
+
+Also you can use your own locale in yaml, json or plain hash.
+
+```js
+var Charlatan = require('charlatan');
+Charlatan.<span class="apidocCodeKeywordSpan">addLocale</span>(myLocaleName, myLocaleFile);
+Charlatan.setLocale(myLocaleName);
+Charlatan.Name.name();
+```
+
+__Note__: If phrase not found in current locale, charlatan tries to then
+fallback into to base language, and then to `en`. For example `ru-RU -&gt; ru -&gt; en`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.bothify" id="apidoc.element.charlatan.bothify">
+        function <span class="apidocSignatureSpan">charlatan.</span>bothify
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bothify = function (source) {
+  return exports.letterify(exports.numerify(source));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return source.replace(/\?/g, function () {
+    return Helpers.sample(ULetters);
+  });
+};
+
+
+/**
+ * Charlatan.<span class="apidocCodeKeywordSpan">bothify</span>(source) -&gt; string
+ * - source (string): source string
+ *
+ * Perform both `letterify` and `numerify` operations.
+ **/
+exports.bothify = function (source) {
+  return exports.letterify(exports.numerify(source));
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.fetch" id="apidoc.element.charlatan.fetch">
+        function <span class="apidocSignatureSpan">charlatan.</span>fetch
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fetch = function (key) {
+  var fetched = exports.translate(key);
+
+  if (Array.isArray(fetched)) {
+    fetched = Helpers.sample(fetched);
+  }
+
+  if (fetched.match(/^\//) &amp;&amp; fetched.match(/\/$/)) {
+    fetched = exports.regexify(fetched);
+  }
+
+  return fetched;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+return result;
+};
+
+
+/**
+ * Charlatan.<span class="apidocCodeKeywordSpan">fetch</span>(key) -&gt; mixed
+ * - key (string): key in locale, for example `address.city_prefix`
+ *
+ * Helper for the common approach of grabbing a translation
+ * with an array of values and selecting one of them.
+ **/
+var fetch = exports.fetch = function (key) {
+var fetched = exports.translate(key);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.getAllLocales" id="apidoc.element.charlatan.getAllLocales">
+        function <span class="apidocSignatureSpan">charlatan.</span>getAllLocales
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAllLocales = function () {
+  return Object.keys(locales);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ **/
+exports.getLocale = function () {
+  return current_locale;
+};
+
+
+/**
+ * Charlatan.<span class="apidocCodeKeywordSpan">getAllLocales</span>() -&gt; [String]
+ *
+ * Get the list of all available locales
+ **/
+exports.getAllLocales = function () {
+  return Object.keys(locales);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.getLocale" id="apidoc.element.charlatan.getLocale">
+        function <span class="apidocSignatureSpan">charlatan.</span>getLocale
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLocale = function () {
+  return current_locale;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+  current_locale = name;
+  return true;
+};
+
+
+/**
+ * Charlatan.<span class="apidocCodeKeywordSpan">getLocale</span>() -&gt; String
+ *
+ * Get current locale
+ **/
+exports.getLocale = function () {
+  return current_locale;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.letterify" id="apidoc.element.charlatan.letterify">
+        function <span class="apidocSignatureSpan">charlatan.</span>letterify
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">letterify = function (source) {
+  return source.replace(/\?/g, function () {
+    return Helpers.sample(ULetters);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  .replace(/\#/g, function () {
+    return Math.floor(Helpers.rand(10, 0));
+  });
+};
+
+
+/**
+ * Charlatan.<span class="apidocCodeKeywordSpan">letterify</span>(source) -&gt; string
+ * - source (string): source string
+ *
+ * Find `?` symbol and replace it with random char from [A..Z]
+ **/
+exports.letterify = function (source) {
+return source.replace(/\?/g, function () {
+  return Helpers.sample(ULetters);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.numerify" id="apidoc.element.charlatan.numerify">
+        function <span class="apidocSignatureSpan">charlatan.</span>numerify
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">numerify = function (source) {
+  // make sure numerify results donâ€™t start with a zero
+  return source
+    .replace(/\#/, function () {
+      return Math.floor(Helpers.rand(10, 1));
+    })
+    .replace(/\#/g, function () {
+      return Math.floor(Helpers.rand(10, 0));
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  return text;
+});
+};
+
+
+/**
+ * Charlatan.<span class="apidocCodeKeywordSpan">numerify</span>(source) -&gt; string
+ * - source (string): source string
+ *
+ * Find `#` symbol and replace it with random number
+ **/
+exports.numerify = function (source) {
+// make sure numerify results donâ€™t start with a zero
+return source
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.parse" id="apidoc.element.charlatan.parse">
+        function <span class="apidocSignatureSpan">charlatan.</span>parse
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (key) {
+  var re = /#\{([A-Za-z]+(?:\.))?([^\}]+)\}/g;
+
+  return fetch(key).replace(re, function (match, kls, method) {
+    var text = '';
+
+    // If the token had a class Prefix (e.g., Name.first_name)
+    // take it, otherwise use base namespace part
+    if (!kls) {
+      kls = exports.Helpers.capitalize(key.split('.')[0]);
+    } else {
+      kls = kls.slice(0, -1);
+    }
+    // If the class has the method, call it, otherwise
+    // fetch the translation
+    if (exports[kls] &amp;&amp;
+        typeof exports[kls][snake2camelcase(method)] === 'function') {
+
+      text += exports[kls][snake2camelcase(method)].call(exports[kls]);
+    } else {
+      text += exports.fetch(kls.toLowerCase() + '.' + method);
+    }
+
+    return text;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  return fetched;
+};
+
+
+/**
+ * Charlatan.<span class="apidocCodeKeywordSpan">parse</span>(key) -&gt; string
+ * - key (string): key in locale, for example `address.city_prefix`
+ *
+ * Load formatted strings from the locale, "parsing" them
+ * into method calls that can be used to generate a
+ * formatted translation: e.g., "#{first_name} #{last_name}".
+ **/
+exports.parse = function (key) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.regexify" id="apidoc.element.charlatan.regexify">
+        function <span class="apidocSignatureSpan">charlatan.</span>regexify
+        <span class="apidocSignatureSpan">(re)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">regexify = function (re) {
+  // Handle either a Regexp or a String that looks like a Regexp
+  if (Object.prototype.toString.call(re) === '[object RegExp]') {
+    re = re.source;
+  }
+
+  // "baz", 2, 3 -&gt; "bazbaz" or "bazbazbaz"
+  function repeatRange(_unused, what, from, to) {
+    return new Array(Helpers.rand(Number(to) + 1, Number(from)) + 1).join(what);
+  }
+
+  return re
+    // Ditch the anchors
+    .replace(/^\/?\^?/, '').replace(/\$?\/?$/, '')
+
+    // All {2} become {2,2} and ? become {0,1}
+    .replace(/\{(\d+)\}/g, '{$1,$1}').replace(/\?/g, '{0,1}')
+
+    // [12]{1,2} becomes [12] or [12][12]
+    .replace(/(\[[^\]]+\])\{(\d+),(\d+)\}/g, repeatRange)
+
+    // (12|34){1,2} becomes (12|34) or (12|34)(12|34)
+    .replace(/(\([^\)]+\))\{(\d+),(\d+)\}/g, repeatRange)
+
+    // A{1,2} becomes A or AA or \d{3} becomes \d\d\d
+    .replace(/(\\?.)\{(\d+),(\d+)\}/g, repeatRange)
+
+    // (this|that) becomes 'this' or 'that'
+    .replace(/\((.*?)\)/g, function (match) {
+      return Helpers.sample(match.replace(/[\(\)]/g, '').split('|'));
+    })
+
+    // All A-Z inside of [] become C (or X, or whatever)
+    .replace(/\[([^\]]+)\]/g, function (match) {
+      return match.replace(/(\w\-\w)/g, function (range) {
+        range = range.split('-');
+
+        return Helpers.sample(Helpers.range(range[0], range[1]));
+      });
+    })
+
+    // All [ABC] become B (or A or C)
+    .replace(/\[([^\]]+)\]/g, function (m, str) {
+      return Helpers.sample(str.split(''));
+    })
+
+    .replace(/\\d/g, function () {
+      return Helpers.sample(Numbers);
+    })
+
+    .replace(/\\w/g, function () {
+      return Helpers.sample(Letters);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var fetched = exports.translate(key);
+
+  if (Array.isArray(fetched)) {
+    fetched = Helpers.sample(fetched);
+  }
+
+  if (fetched.match(/^\//) &amp;&amp; fetched.match(/\/$/)) {
+    fetched = exports.<span class="apidocCodeKeywordSpan">regexify</span>(fetched);
+  }
+
+  return fetched;
+};
+
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.setLocale" id="apidoc.element.charlatan.setLocale">
+        function <span class="apidocSignatureSpan">charlatan.</span>setLocale
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setLocale = function (name) {
+  if (!name) {
+    name = base_locale;
+  }
+  if (!locales[name]) {
+    addLocale(name);
+  }
+  current_locale = name;
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+solution of this problem.
+
+Currently available locales are [here](https://github.com/nodeca/charlatan/tree/master/lib/locales),
+`en` is [default](https://github.com/nodeca/charlatan/blob/master/lib/locales/en.yml).
+
+```js
+var Charlatan = require('charlatan');
+Charlatan.<span class="apidocCodeKeywordSpan">setLocale</span>('en-US');
+Charlatan.Name.name();
+```
+
+Also you can use your own locale in yaml, json or plain hash.
+
+```js
+var Charlatan = require('charlatan');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.translate" id="apidoc.element.charlatan.translate">
+        function <span class="apidocSignatureSpan">charlatan.</span>translate
+        <span class="apidocSignatureSpan">(key, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">translate = function (key, options) {
+  if (!options) { options = {}; }
+
+  var locale = options.locale || current_locale;
+  var lang = locale.split('-')[0];
+  var path = key.split('.');
+  var result = getValue(locales[locale], path);
+
+  // fallback to root lang (`pt-BR` -&gt; `pt`, but it can be missed)
+  if (typeof result === 'undefined' &amp;&amp; lang !== locale) {
+    if (locales[lang]) {
+      result = getValue(locales[lang], path);
+    }
+  }
+
+  // fallback to base lang (en)
+  if (typeof result === 'undefined') {
+    result = getValue(locales[base_locale], path);
+  }
+
+  // oops
+  if (typeof result === 'undefined') {
+    throw new Error('Invalid path: ' + key);
+  }
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+**/
+exports.getAllLocales = function () {
+ return Object.keys(locales);
+};
+
+
+/**
+* Charlatan.<span class="apidocCodeKeywordSpan">translate</span>(key) -&gt; mixed
+* - key (string): key in locale, for example `address.city_prefix`
+*
+* Returns a phrase from the locale.
+*
+* Fallbacks to base language (and then to `en`)
+*   if it was not found: `ru-RU -&gt; ru -&gt; en`
+**/
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan.Address" id="apidoc.module.charlatan.Address">module charlatan.Address</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Address.buildingNumber" id="apidoc.element.charlatan.Address.buildingNumber">
+        function <span class="apidocSignatureSpan">charlatan.Address.</span>buildingNumber
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">buildingNumber = function () {
+  return Charlatan.bothify(Charlatan.fetch('address.building_number'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Address.city" id="apidoc.element.charlatan.Address.city">
+        function <span class="apidocSignatureSpan">charlatan.Address.</span>city
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">city = function () {
+  return Charlatan.parse('address.city');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Address.cityPrefix" id="apidoc.element.charlatan.Address.cityPrefix">
+        function <span class="apidocSignatureSpan">charlatan.Address.</span>cityPrefix
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cityPrefix = function () {
+  return Charlatan.fetch('address.city_prefix');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Address.citySuffix" id="apidoc.element.charlatan.Address.citySuffix">
+        function <span class="apidocSignatureSpan">charlatan.Address.</span>citySuffix
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">citySuffix = function () {
+  return Charlatan.fetch('address.city_suffix');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Address.country" id="apidoc.element.charlatan.Address.country">
+        function <span class="apidocSignatureSpan">charlatan.Address.</span>country
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">country = function () {
+  return Charlatan.fetch('address.country');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Address.countryCode" id="apidoc.element.charlatan.Address.countryCode">
+        function <span class="apidocSignatureSpan">charlatan.Address.</span>countryCode
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">countryCode = function () {
+  return Charlatan.fetch('address.country_code');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Address.latitude" id="apidoc.element.charlatan.Address.latitude">
+        function <span class="apidocSignatureSpan">charlatan.Address.</span>latitude
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">latitude = function () {
+  return ((Math.random() * 180) - 90).toString();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Address.longitude" id="apidoc.element.charlatan.Address.longitude">
+        function <span class="apidocSignatureSpan">charlatan.Address.</span>longitude
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">longitude = function () {
+  return ((Math.random() * 360) - 180).toString();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Address.postcode" id="apidoc.element.charlatan.Address.postcode">
+        function <span class="apidocSignatureSpan">charlatan.Address.</span>postcode
+        <span class="apidocSignatureSpan">(state_abbr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">postcode = function (state_abbr) {
+  if (!state_abbr) {
+    return Charlatan.bothify(Charlatan.fetch('address.postcode'));
+  }
+
+  return Charlatan.bothify(Charlatan.fetch('address.postcode_by_state.' + state_abbr));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Address.secondaryAddress" id="apidoc.element.charlatan.Address.secondaryAddress">
+        function <span class="apidocSignatureSpan">charlatan.Address.</span>secondaryAddress
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">secondaryAddress = function () {
+  return Charlatan.numerify(Charlatan.fetch('address.secondary_address'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Address.state" id="apidoc.element.charlatan.Address.state">
+        function <span class="apidocSignatureSpan">charlatan.Address.</span>state
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">state = function () {
+  return Charlatan.fetch('address.state');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Address.stateAbbr" id="apidoc.element.charlatan.Address.stateAbbr">
+        function <span class="apidocSignatureSpan">charlatan.Address.</span>stateAbbr
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stateAbbr = function () {
+  return Charlatan.fetch('address.state_abbr');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Address.streetAddress" id="apidoc.element.charlatan.Address.streetAddress">
+        function <span class="apidocSignatureSpan">charlatan.Address.</span>streetAddress
+        <span class="apidocSignatureSpan">(include_secondary)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">streetAddress = function (include_secondary) {
+  return Charlatan.numerify(Charlatan.parse('address.street_address') +
+                (include_secondary ? ' ' + exports.secondaryAddress() : ''));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Address.streetName" id="apidoc.element.charlatan.Address.streetName">
+        function <span class="apidocSignatureSpan">charlatan.Address.</span>streetName
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">streetName = function () {
+  return Charlatan.parse('address.street_name');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Address.streetSuffix" id="apidoc.element.charlatan.Address.streetSuffix">
+        function <span class="apidocSignatureSpan">charlatan.Address.</span>streetSuffix
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">streetSuffix = function () {
+  return Charlatan.fetch('address.street_suffix');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Address.timeZone" id="apidoc.element.charlatan.Address.timeZone">
+        function <span class="apidocSignatureSpan">charlatan.Address.</span>timeZone
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">timeZone = function () {
+  return Charlatan.fetch('address.time_zone');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Address.zip" id="apidoc.element.charlatan.Address.zip">
+        function <span class="apidocSignatureSpan">charlatan.Address.</span>zip
+        <span class="apidocSignatureSpan">(state_abbr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">zip = function (state_abbr) {
+  if (!state_abbr) {
+    return Charlatan.bothify(Charlatan.fetch('address.postcode'));
+  }
+
+  return Charlatan.bothify(Charlatan.fetch('address.postcode_by_state.' + state_abbr));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Address.zipCode" id="apidoc.element.charlatan.Address.zipCode">
+        function <span class="apidocSignatureSpan">charlatan.Address.</span>zipCode
+        <span class="apidocSignatureSpan">(state_abbr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">zipCode = function (state_abbr) {
+  if (!state_abbr) {
+    return Charlatan.bothify(Charlatan.fetch('address.postcode'));
+  }
+
+  return Charlatan.bothify(Charlatan.fetch('address.postcode_by_state.' + state_abbr));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan.App" id="apidoc.module.charlatan.App">module charlatan.App</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.App.author" id="apidoc.element.charlatan.App.author">
+        function <span class="apidocSignatureSpan">charlatan.App.</span>author
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">author = function () {
+  return Charlatan.fetch('app.author');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.App.name" id="apidoc.element.charlatan.App.name">
+        function <span class="apidocSignatureSpan">charlatan.App.</span>name
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">name = function () {
+  return Charlatan.fetch('app.name');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Usage
+-----
+
+```js
+var Charlatan = require('charlatan');
+
+var name    = Charlatan.Name.<span class="apidocCodeKeywordSpan">name</span>();       // Joshua Lemke MD
+var email   = Charlatan.Internet.email();  // glover_ii@voluptas.name
+var company = Charlatan.Company.name();    // Wilkinson LLC
+```
+
+
+Locales
+-------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.App.version" id="apidoc.element.charlatan.App.version">
+        function <span class="apidocSignatureSpan">charlatan.App.</span>version
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">version = function () {
+  return Charlatan.numerify(Charlatan.parse('app.version'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan.Avatar" id="apidoc.module.charlatan.Avatar">module charlatan.Avatar</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Avatar.image" id="apidoc.element.charlatan.Avatar.image">
+        function <span class="apidocSignatureSpan">charlatan.Avatar.</span>image
+        <span class="apidocSignatureSpan">(slug, size, format)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">image = function (slug, size, format) {
+  if (!slug) {
+    slug = Charlatan.Lorem.words().join('');
+  }
+  if (!size) {
+    size = '300x300';
+  }
+  if (!format) {
+    format = 'png';
+  }
+
+  if (!size.match(/^[0-9]+x[0-9]+$/)) {
+    throw new Error('Size should be specified in format 300x300');
+  }
+  if (SUPPORTED_FORMATS.indexOf(format) === -1) {
+    throw new Error('Supported formats are ' + SUPPORTED_FORMATS.join(', '));
+  }
+
+  return 'http://robohash.org/' + slug + '.' + format + '?size=' + size;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan.Bitcoin" id="apidoc.module.charlatan.Bitcoin">module charlatan.Bitcoin</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Bitcoin._addressFor" id="apidoc.element.charlatan.Bitcoin._addressFor">
+        function <span class="apidocSignatureSpan">charlatan.Bitcoin.</span>_addressFor
+        <span class="apidocSignatureSpan">(network, rnd)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addressFor(network, rnd) {
+  var version = PROTOCOL_VERSIONS[network];
+
+  //                      ver   payload  checksum
+  var packed = new Buffer('00' + rnd + '00112233', 'hex');
+
+  packed[0] = version;
+
+  var hash = crypto.createHash('sha256').update(packed.slice(0, packed.length - 4)).digest();
+
+  hash = crypto.createHash('sha256').update(hash).digest();
+
+  packed[packed.length - 4] = hash[0];
+  packed[packed.length - 3] = hash[1];
+  packed[packed.length - 2] = hash[2];
+  packed[packed.length - 1] = hash[3];
+
+  return base58(packed);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Bitcoin._base58" id="apidoc.element.charlatan.Bitcoin._base58">
+        function <span class="apidocSignatureSpan">charlatan.Bitcoin.</span>_base58
+        <span class="apidocSignatureSpan">(buf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function base58(buf) {
+  var alphabet = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
+  var base = alphabet.length;
+  var result = [];
+  var divident = new Buffer(buf.length);
+
+  buf.copy(divident);
+
+  while (!buffer_empty(divident)) {
+    result.unshift(alphabet[divide(divident, base)]);
+  }
+
+  for (var i = 0; i &lt; buf.length &amp;&amp; !buf[i]; i++) {
+    result.unshift(alphabet[0]);
+  }
+
+  return result.join('');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Bitcoin._divide" id="apidoc.element.charlatan.Bitcoin._divide">
+        function <span class="apidocSignatureSpan">charlatan.Bitcoin.</span>_divide
+        <span class="apidocSignatureSpan">(buf, n)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function divide(buf, n) {
+<span class="apidocCodeCommentSpan">  /* eslint-disable no-bitwise */
+</span>  var i = 0, l, t, rem;
+
+  t = buf[i];
+  rem = t % n;
+  buf[i] = Math.floor(t / n);
+
+  for (i = 1, l = buf.length; i &lt; l; i++) {
+    t = rem * 256 + buf[i];
+    rem = t % n;
+    buf[i] = Math.floor(t / n);
+  }
+
+  return rem;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Bitcoin.address" id="apidoc.element.charlatan.Bitcoin.address">
+        function <span class="apidocSignatureSpan">charlatan.Bitcoin.</span>address
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">address = function () {
+  return addressFor('main', crypto.randomBytes(20).toString('hex'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Bitcoin.testnetAddress" id="apidoc.element.charlatan.Bitcoin.testnetAddress">
+        function <span class="apidocSignatureSpan">charlatan.Bitcoin.</span>testnetAddress
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">testnetAddress = function () {
+  return addressFor('testnet', crypto.randomBytes(20).toString('hex'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan.Business" id="apidoc.module.charlatan.Business">module charlatan.Business</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Business.creditCardExpiryDate" id="apidoc.element.charlatan.Business.creditCardExpiryDate">
+        function <span class="apidocSignatureSpan">charlatan.Business.</span>creditCardExpiryDate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">creditCardExpiryDate = function () {
+  return new Date(Charlatan.fetch('business.credit_card_expiry_dates'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Business.creditCardNumber" id="apidoc.element.charlatan.Business.creditCardNumber">
+        function <span class="apidocSignatureSpan">charlatan.Business.</span>creditCardNumber
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">creditCardNumber = function () {
+  return Charlatan.fetch('business.credit_card_numbers');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Business.creditCardType" id="apidoc.element.charlatan.Business.creditCardType">
+        function <span class="apidocSignatureSpan">charlatan.Business.</span>creditCardType
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">creditCardType = function () {
+  return Charlatan.fetch('business.credit_card_types');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan.Code" id="apidoc.module.charlatan.Code">module charlatan.Code</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Code.ean" id="apidoc.element.charlatan.Code.ean">
+        function <span class="apidocSignatureSpan">charlatan.Code.</span>ean
+        <span class="apidocSignatureSpan">(base)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ean = function (base) {
+  return Number(base) === 8 ? generate_base8_ean() : generate_base13_ean();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Code.isbn" id="apidoc.element.charlatan.Code.isbn">
+        function <span class="apidocSignatureSpan">charlatan.Code.</span>isbn
+        <span class="apidocSignatureSpan">(base)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isbn = function (base) {
+  return Number(base) === 13 ? generate_base13_isbn() : generate_base10_isbn();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Code.rut" id="apidoc.element.charlatan.Code.rut">
+        function <span class="apidocSignatureSpan">charlatan.Code.</span>rut
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rut = function () {
+  var value = String(Charlatan.Number.number(8));
+
+  return value + '-' + String(rut_verificator_digit(value));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan.Commerce" id="apidoc.module.charlatan.Commerce">module charlatan.Commerce</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Commerce.color" id="apidoc.element.charlatan.Commerce.color">
+        function <span class="apidocSignatureSpan">charlatan.Commerce.</span>color
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">color = function () {
+  return Charlatan.fetch('commerce.color');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Commerce.department" id="apidoc.element.charlatan.Commerce.department">
+        function <span class="apidocSignatureSpan">charlatan.Commerce.</span>department
+        <span class="apidocSignatureSpan">(max, fixed_amount)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">department = function (max, fixed_amount) {
+  if (typeof max !== 'number') {
+    max = 3;
+  }
+
+  var num;
+
+  if (fixed_amount) {
+    num = max;
+  } else {
+    num = Helpers.rand(max + 1, 1);
+  }
+
+  var categories = get_categories(num);
+
+  if (num &gt; 1) {
+    return merge_categories(categories);
+  }
+  return categories[0];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Commerce.price" id="apidoc.element.charlatan.Commerce.price">
+        function <span class="apidocSignatureSpan">charlatan.Commerce.</span>price
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">price = function () {
+  return Charlatan.Helpers.rand(100, 0) +
+    Math.floor(Charlatan.Helpers.rand(100, 0)) / 100.0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Commerce.productName" id="apidoc.element.charlatan.Commerce.productName">
+        function <span class="apidocSignatureSpan">charlatan.Commerce.</span>productName
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">productName = function () {
+  return Charlatan.fetch('commerce.product_name.adjective') + ' ' +
+    Charlatan.fetch('commerce.product_name.material') + ' ' +
+    Charlatan.fetch('commerce.product_name.product');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan.Company" id="apidoc.module.charlatan.Company">module charlatan.Company</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Company.bs" id="apidoc.element.charlatan.Company.bs">
+        function <span class="apidocSignatureSpan">charlatan.Company.</span>bs
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bs = function () {
+  return Charlatan.translate('company.bs').map(function (list) {
+    return Helpers.sample(list);
+  }).join(' ');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Company.catchPhrase" id="apidoc.element.charlatan.Company.catchPhrase">
+        function <span class="apidocSignatureSpan">charlatan.Company.</span>catchPhrase
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">catchPhrase = function () {
+  return Charlatan.translate('company.buzzwords').map(function (list) {
+    return Helpers.sample(list);
+  }).join(' ');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Company.dunsNumber" id="apidoc.element.charlatan.Company.dunsNumber">
+        function <span class="apidocSignatureSpan">charlatan.Company.</span>dunsNumber
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dunsNumber = function () {
+  return Math.random().toFixed(2).slice(2) + '-' +
+         Math.random().toFixed(3).slice(2) + '-' +
+         Math.random().toFixed(4).slice(2);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Company.ein" id="apidoc.element.charlatan.Company.ein">
+        function <span class="apidocSignatureSpan">charlatan.Company.</span>ein
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ein = function () {
+  return Math.random().toFixed(2).slice(2) + '-' +
+         Math.random().toFixed(7).slice(2);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Company.logo" id="apidoc.element.charlatan.Company.logo">
+        function <span class="apidocSignatureSpan">charlatan.Company.</span>logo
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">logo = function () {
+  var rand_num = Charlatan.Helpers.rand(13) + 1;
+
+  return 'http://pigment.github.io/fake-logos/logos/medium/color/' + rand_num + '.png';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Company.name" id="apidoc.element.charlatan.Company.name">
+        function <span class="apidocSignatureSpan">charlatan.Company.</span>name
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">name = function () {
+  return Charlatan.parse('company.name');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Usage
+-----
+
+```js
+var Charlatan = require('charlatan');
+
+var name    = Charlatan.Name.<span class="apidocCodeKeywordSpan">name</span>();       // Joshua Lemke MD
+var email   = Charlatan.Internet.email();  // glover_ii@voluptas.name
+var company = Charlatan.Company.name();    // Wilkinson LLC
+```
+
+
+Locales
+-------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Company.suffix" id="apidoc.element.charlatan.Company.suffix">
+        function <span class="apidocSignatureSpan">charlatan.Company.</span>suffix
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">suffix = function () {
+  return Charlatan.fetch('company.suffix');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan.Date" id="apidoc.module.charlatan.Date">module charlatan.Date</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Date.backward" id="apidoc.element.charlatan.Date.backward">
+        function <span class="apidocSignatureSpan">charlatan.Date.</span>backward
+        <span class="apidocSignatureSpan">(days)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">backward = function (days) {
+  if (typeof days !== 'number') {
+    days = 365;
+  }
+
+  var from = Date.now() - 24 * 60 * 60 * 1000;
+  var to   = Date.now() - 24 * 60 * 60 * 1000 * days;
+
+  return exports.between(from, to);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Date.between" id="apidoc.element.charlatan.Date.between">
+        function <span class="apidocSignatureSpan">charlatan.Date.</span>between
+        <span class="apidocSignatureSpan">(from, to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">between = function (from, to) {
+  from = typeof from === 'number' ? from : Date.parse(from);
+  to = typeof to === 'number' ? to : Date.parse(to);
+
+  return new Date(Helpers.rand(Math.max(from, to) + 1, Math.min(from, to)));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Date.birthday" id="apidoc.element.charlatan.Date.birthday">
+        function <span class="apidocSignatureSpan">charlatan.Date.</span>birthday
+        <span class="apidocSignatureSpan">(min_age, max_age)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">birthday = function (min_age, max_age) {
+  if (typeof min_age !== 'number') {
+    min_age = 18;
+  }
+
+  if (typeof max_age !== 'number') {
+    max_age = 65;
+  }
+
+  var t    = new Date();
+  var from = new Date(t.getFullYear() - min_age, t.getMonth(), t.getDay());
+  var to   = new Date(t.getFullYear() - max_age, t.getMonth(), t.getDay());
+
+  return exports.between(from, to);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Date.forward" id="apidoc.element.charlatan.Date.forward">
+        function <span class="apidocSignatureSpan">charlatan.Date.</span>forward
+        <span class="apidocSignatureSpan">(days)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">forward = function (days) {
+  if (typeof days !== 'number') {
+    days = 365;
+  }
+
+  var from = Date.now() + 24 * 60 * 60 * 1000;
+  var to   = Date.now() + 24 * 60 * 60 * 1000 * days;
+
+  return exports.between(from, to);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan.Finance" id="apidoc.module.charlatan.Finance">module charlatan.Finance</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Finance.creditCard" id="apidoc.element.charlatan.Finance.creditCard">
+        function <span class="apidocSignatureSpan">charlatan.Finance.</span>creditCard
+        <span class="apidocSignatureSpan">(types)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">creditCard = function (types) {
+  if (!types) {
+    types = CREDIT_CARD_TYPES;
+  }
+
+  if (!Array.isArray(types)) {
+    types = [ types ];
+  }
+
+  var type = Helpers.sample(types);
+  var template = Charlatan.numerify(Charlatan.fetch('credit_card.' + type));
+
+  // calculate the luhn checksum digit
+  var multiplier = 1;
+  var luhn_sum = template
+      .replace(/[^0-9]/g, '')
+      .split('')
+      .reduceRight(function (sum, digit) {
+        multiplier = (multiplier === 2 ? 1 : 2);
+        return sum + Number(
+          String(digit * multiplier).split('').reduce(
+            function (a, b) { return Number(a) + Number(b); }
+          )
+        );
+      }, 0);
+
+  // the sum plus whatever the last digit is must be a multiple of 10. So, the
+  // last digit must be 10 - the last digit of the sum.
+  var luhn_digit = (10 - (luhn_sum % 10)) % 10;
+
+  return template.replace(/L/g, luhn_digit);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan.Hacker" id="apidoc.module.charlatan.Hacker">module charlatan.Hacker</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Hacker.abbreviation" id="apidoc.element.charlatan.Hacker.abbreviation">
+        function <span class="apidocSignatureSpan">charlatan.Hacker.</span>abbreviation
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">abbreviation = function () {
+  return Charlatan.fetch('hacker.abbreviation');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Hacker.adjective" id="apidoc.element.charlatan.Hacker.adjective">
+        function <span class="apidocSignatureSpan">charlatan.Hacker.</span>adjective
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">adjective = function () {
+  return Charlatan.fetch('hacker.adjective');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Hacker.ingverb" id="apidoc.element.charlatan.Hacker.ingverb">
+        function <span class="apidocSignatureSpan">charlatan.Hacker.</span>ingverb
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ingverb = function () {
+  return Charlatan.fetch('hacker.ingverb');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Hacker.noun" id="apidoc.element.charlatan.Hacker.noun">
+        function <span class="apidocSignatureSpan">charlatan.Hacker.</span>noun
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">noun = function () {
+  return Charlatan.fetch('hacker.noun');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Hacker.saySomethingSmart" id="apidoc.element.charlatan.Hacker.saySomethingSmart">
+        function <span class="apidocSignatureSpan">charlatan.Hacker.</span>saySomethingSmart
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">saySomethingSmart = function () {
+  return Helpers.sample(phrases());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Hacker.verb" id="apidoc.element.charlatan.Hacker.verb">
+        function <span class="apidocSignatureSpan">charlatan.Hacker.</span>verb
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">verb = function () {
+  return Charlatan.fetch('hacker.verb');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan.Helpers" id="apidoc.module.charlatan.Helpers">module charlatan.Helpers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Helpers.capitalize" id="apidoc.element.charlatan.Helpers.capitalize">
+        function <span class="apidocSignatureSpan">charlatan.Helpers.</span>capitalize
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">capitalize = function (str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  return fetch(key).replace(re, function (match, kls, method) {
+var text = '';
+
+// If the token had a class Prefix (e.g., Name.first_name)
+// take it, otherwise use base namespace part
+if (!kls) {
+  kls = exports.Helpers.<span class="apidocCodeKeywordSpan">capitalize</span>(key.split('.')[0]);
+} else {
+  kls = kls.slice(0, -1);
+}
+// If the class has the method, call it, otherwise
+// fetch the translation
+if (exports[kls] &amp;&amp;
+    typeof exports[kls][snake2camelcase(method)] === 'function') {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Helpers.rand" id="apidoc.element.charlatan.Helpers.rand">
+        function <span class="apidocSignatureSpan">charlatan.Helpers.</span>rand
+        <span class="apidocSignatureSpan">(max, min)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rand = function (max, min) {
+  if (!min) {
+    min = 0;
+  }
+  return Math.floor(Math.random() * (max - min)) + min;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *
+ * Find `#` symbol and replace it with random number
+ **/
+exports.numerify = function (source) {
+  // make sure numerify results donâ€™t start with a zero
+  return source
+    .replace(/\#/, function () {
+      return Math.floor(Helpers.<span class="apidocCodeKeywordSpan">rand</span>(10, 1));
+    })
+    .replace(/\#/g, function () {
+      return Math.floor(Helpers.rand(10, 0));
+    });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Helpers.range" id="apidoc.element.charlatan.Helpers.range">
+        function <span class="apidocSignatureSpan">charlatan.Helpers.</span>range
+        <span class="apidocSignatureSpan">(from, to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">range = function (from, to) {
+  var i, stringify = false, result = [];
+
+  if (typeof from === 'string' &amp;&amp; typeof to === 'string') {
+    stringify = true;
+    from = from.charCodeAt(0);
+    to = to.charCodeAt(0);
+  }
+
+  for (i = from; i &lt;= to; i++) {
+    result.push(i);
+  }
+
+  return stringify ?
+         result.map(function (x) { return String.fromCharCode(x); }) :
+         result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var locales   = require('./locales').locales;
+var addLocale = exports.addLocale = require('./locales').addLocale;
+
+
+var current_locale;
+var base_locale = 'en';
+
+var Numbers  = Helpers.<span class="apidocCodeKeywordSpan">range</span>('0', '9');
+var ULetters = Helpers.range('A', 'Z');
+var Letters  = ULetters.concat(Helpers.range('a', 'z'));
+
+
+// getValue(data, path) -&gt; mixed
+// - data (object): locale
+// - path (array): path to property
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Helpers.sample" id="apidoc.element.charlatan.Helpers.sample">
+        function <span class="apidocSignatureSpan">charlatan.Helpers.</span>sample
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sample = function (source) {
+  return source[exports.rand(source.length)];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Helper for the common approach of grabbing a translation
+ * with an array of values and selecting one of them.
+ **/
+var fetch = exports.fetch = function (key) {
+var fetched = exports.translate(key);
+
+if (Array.isArray(fetched)) {
+  fetched = Helpers.<span class="apidocCodeKeywordSpan">sample</span>(fetched);
+}
+
+if (fetched.match(/^\//) &amp;&amp; fetched.match(/\/$/)) {
+  fetched = exports.regexify(fetched);
+}
+
+return fetched;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Helpers.shuffle" id="apidoc.element.charlatan.Helpers.shuffle">
+        function <span class="apidocSignatureSpan">charlatan.Helpers.</span>shuffle
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">shuffle = function (source) {
+  var result = source.slice(),
+      i, p, tmp;
+
+  for (i = 0; i &lt; source.length; i++) {
+    p = parseInt(Math.random() * source.length, 10);
+    tmp = result[i];
+    result[i] = result[p];
+    result[p] = tmp;
+  }
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Helpers.titleize" id="apidoc.element.charlatan.Helpers.titleize">
+        function <span class="apidocSignatureSpan">charlatan.Helpers.</span>titleize
+        <span class="apidocSignatureSpan">(title)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">titleize = function (title) {
+  var i;
+  var words = title.toLowerCase().split(' ');
+
+  // first word is always capitalised
+  words[0] = capitalize(words[0]);
+
+  for (i = 1; i &lt; words.length; i++) {
+    if (titleizeSmallWords.indexOf(words[i]) === -1) {
+      words[i] = capitalize(words[i]);
+    }
+  }
+  return words.join(' ');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan.Internet" id="apidoc.module.charlatan.Internet">module charlatan.Internet</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Internet.IPv4" id="apidoc.element.charlatan.Internet.IPv4">
+        function <span class="apidocSignatureSpan">charlatan.Internet.</span>IPv4
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">IPv4 = function () {
+  var i, result = [];
+
+  for (i = 0; i &lt; 4; i++) {
+    result[i] = Helpers.rand(255, 1); // 1..254
+  }
+
+  return result.join('.');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Internet.IPv6" id="apidoc.element.charlatan.Internet.IPv6">
+        function <span class="apidocSignatureSpan">charlatan.Internet.</span>IPv6
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">IPv6 = function () {
+  var group, result = [], i, j;
+
+  for (i = 0; i &lt; 8; i++) {
+    group = '';
+    for (j = 0; j &lt; 4; j++) {
+      group += Helpers.rand(16).toString(16);
+    }
+    result.push(group);
+  }
+
+  return result.join(':');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Internet.deviceToken" id="apidoc.element.charlatan.Internet.deviceToken">
+        function <span class="apidocSignatureSpan">charlatan.Internet.</span>deviceToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deviceToken = function () {
+  var i, result = '';
+
+  for (i = 0; i &lt; 64; i++) {
+    result += Helpers.rand(16).toString(16);
+  }
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Internet.domainName" id="apidoc.element.charlatan.Internet.domainName">
+        function <span class="apidocSignatureSpan">charlatan.Internet.</span>domainName
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">domainName = function () {
+  return fix_umlauts(exports.domainWord()) + '.' + exports.domainSuffix();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Internet.domainSuffix" id="apidoc.element.charlatan.Internet.domainSuffix">
+        function <span class="apidocSignatureSpan">charlatan.Internet.</span>domainSuffix
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">domainSuffix = function () {
+  // lorem can return word with apostrophe
+  return Charlatan.fetch('internet.domain_suffix');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Internet.domainWord" id="apidoc.element.charlatan.Internet.domainWord">
+        function <span class="apidocSignatureSpan">charlatan.Internet.</span>domainWord
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">domainWord = function () {
+  return Charlatan.Company.name()
+          .split(' ')[0]
+          .replace(/\W/g, '')
+          .toLowerCase();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Internet.email" id="apidoc.element.charlatan.Internet.email">
+        function <span class="apidocSignatureSpan">charlatan.Internet.</span>email
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">email = function (name) {
+  return exports.userName(name) + '@' + exports.domainName();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Usage
+-----
+
+```js
+var Charlatan = require('charlatan');
+
+var name    = Charlatan.Name.name();       // Joshua Lemke MD
+var email   = Charlatan.Internet.<span class="apidocCodeKeywordSpan">email</span>();  // glover_ii@voluptas.name
+var company = Charlatan.Company.name();    // Wilkinson LLC
+```
+
+
+Locales
+-------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Internet.freeEmail" id="apidoc.element.charlatan.Internet.freeEmail">
+        function <span class="apidocSignatureSpan">charlatan.Internet.</span>freeEmail
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">freeEmail = function (name) {
+  return exports.userName(name) + '@' + Charlatan.fetch('internet.free_email');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Internet.macAddress" id="apidoc.element.charlatan.Internet.macAddress">
+        function <span class="apidocSignatureSpan">charlatan.Internet.</span>macAddress
+        <span class="apidocSignatureSpan">(prefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">macAddress = function (prefix) {
+  if (!prefix) { prefix = ''; }
+
+  var digits = [];
+
+  if (prefix) {
+    digits = prefix.split(':').map(function (d) {
+      return parseInt(d, 16) || 0;
+    });
+  }
+
+  for (var i = 6 - digits.length; i &gt; 0; i--) {
+    digits.push(Helpers.rand(256));
+  }
+
+  return digits.map(function (d) {
+    return ('00' + d.toString(16)).slice(-2);
+  }).join(':');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Internet.password" id="apidoc.element.charlatan.Internet.password">
+        function <span class="apidocSignatureSpan">charlatan.Internet.</span>password
+        <span class="apidocSignatureSpan">(minLength, maxLength)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">password = function (minLength, maxLength) {
+  if (typeof minLength !== 'number') { minLength = 8; }
+  if (typeof maxLength !== 'number') { maxLength = 16; }
+
+  maxLength = Math.max(minLength + 1, maxLength);
+
+  return Charlatan.Lorem.characters(Helpers.rand(maxLength + 1, minLength));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Internet.safeEmail" id="apidoc.element.charlatan.Internet.safeEmail">
+        function <span class="apidocSignatureSpan">charlatan.Internet.</span>safeEmail
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">safeEmail = function (name) {
+  var domain = 'example.' + Helpers.sample([ 'org', 'com', 'net' ]);
+
+  return exports.userName(name) + '@' + domain;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Internet.slug" id="apidoc.element.charlatan.Internet.slug">
+        function <span class="apidocSignatureSpan">charlatan.Internet.</span>slug
+        <span class="apidocSignatureSpan">(words, glue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">slug = function (words, glue) {
+  if (!glue) {
+    glue = Helpers.sample('-_.'.split(''));
+  }
+
+  if (!words) {
+    words = Charlatan.Lorem.words(2);
+  }
+
+  if (Array.isArray(words)) {
+    words = words.join(' ');
+  }
+
+  return words
+           .replace(/ /g, glue)
+           .toLowerCase();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Internet.url" id="apidoc.element.charlatan.Internet.url">
+        function <span class="apidocSignatureSpan">charlatan.Internet.</span>url
+        <span class="apidocSignatureSpan">(host, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">url = function (host, path) {
+  if (!host) {
+    host = exports.domainName();
+  }
+
+  if (!path) {
+    path = '/' + exports.userName();
+  }
+
+  return 'http://' + host + path;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Internet.userName" id="apidoc.element.charlatan.Internet.userName">
+        function <span class="apidocSignatureSpan">charlatan.Internet.</span>userName
+        <span class="apidocSignatureSpan">(specifier, separators)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">userName = function (specifier, separators) {
+  var result;
+
+  if (!separators) { separators = [ '.', '_' ]; }
+
+  if (typeof specifier === 'string') {
+    return Helpers.shuffle(specifier.match(/\w+/g))
+             .join(Helpers.sample(separators))
+             .toLowerCase();
+  }
+
+  if (typeof specifier === 'number') {
+    var tries = 0; // Don't try forever in case we get something like 1_000_000.
+
+    do {
+      result = exports.userName(null, separators);
+      tries++;
+    } while (result.length &lt; specifier &amp;&amp; tries &lt; 7);
+
+    while (result.length &lt; specifier) {
+      result += result;
+    }
+
+    return result;
+  }
+
+  return fix_umlauts(Helpers.sample([
+    function () {
+      return Charlatan.Name.firstName().replace(/\W/g, '').toLowerCase();
+    },
+    function () {
+      return [ Charlatan.Name.firstName(), Charlatan.Name.lastName() ]
+        .join(Helpers.sample(separators))
+        .replace(/\W/g, '')
+        .toLowerCase();
+    }
+  ])());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan.Lorem" id="apidoc.module.charlatan.Lorem">module charlatan.Lorem</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Lorem.character" id="apidoc.element.charlatan.Lorem.character">
+        function <span class="apidocSignatureSpan">charlatan.Lorem.</span>character
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">character = function () {
+  return exports.characters(1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Lorem.characters" id="apidoc.element.charlatan.Lorem.characters">
+        function <span class="apidocSignatureSpan">charlatan.Lorem.</span>characters
+        <span class="apidocSignatureSpan">(charCount)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">characters = function (charCount) {
+  if (typeof charCount === 'undefined' || charCount === null) { charCount = 255; }
+
+  var result = '';
+
+  for (var i = 0, l = resolve(charCount); i &lt; l; i++) {
+    result += Helpers.rand(36).toString(36);
+  }
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Lorem.paragraph" id="apidoc.element.charlatan.Lorem.paragraph">
+        function <span class="apidocSignatureSpan">charlatan.Lorem.</span>paragraph
+        <span class="apidocSignatureSpan">(sentenceCount, supplemental, randomSentencesToAdd)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">paragraph = function (sentenceCount, supplemental, randomSentencesToAdd) {
+  if (isNotSet(sentenceCount)) {
+    sentenceCount = 3;
+  } else {
+    sentenceCount = resolve(sentenceCount);
+  }
+
+  if (isNotSet(randomSentencesToAdd)) {
+    randomSentencesToAdd = 3;
+  }
+
+  return exports.sentences(sentenceCount + Helpers.rand(randomSentencesToAdd), supplemental).join(' ');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Lorem.paragraphs" id="apidoc.element.charlatan.Lorem.paragraphs">
+        function <span class="apidocSignatureSpan">charlatan.Lorem.</span>paragraphs
+        <span class="apidocSignatureSpan">(paragraphCount, supplemental)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">paragraphs = function (paragraphCount, supplemental) {
+  var paragraphs = [];
+
+  if (isNotSet(paragraphCount)) {
+    paragraphCount = 3;
+  } else {
+    paragraphCount = resolve(paragraphCount);
+  }
+
+  for (; paragraphCount &gt; 0; paragraphCount--) {
+    paragraphs.push(exports.paragraph(null, supplemental));
+  }
+
+  return paragraphs;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Lorem.sentence" id="apidoc.element.charlatan.Lorem.sentence">
+        function <span class="apidocSignatureSpan">charlatan.Lorem.</span>sentence
+        <span class="apidocSignatureSpan">(wordCount, supplemental, randomWordsToAdd)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sentence = function (wordCount, supplemental, randomWordsToAdd) {
+  var sentence;
+
+  if (isNotSet(wordCount)) {
+    wordCount = 4;
+  }
+
+  if (isNotSet(randomWordsToAdd)) {
+    randomWordsToAdd = 6;
+  }
+
+  sentence = exports.words(wordCount + Helpers.rand(randomWordsToAdd), supplemental).join(' ') + '.';
+
+  return Helpers.capitalize(sentence);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Lorem.sentences" id="apidoc.element.charlatan.Lorem.sentences">
+        function <span class="apidocSignatureSpan">charlatan.Lorem.</span>sentences
+        <span class="apidocSignatureSpan">(sentenceCount, supplemental)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sentences = function (sentenceCount, supplemental) {
+  var sentences = [];
+
+  if (isNotSet(sentenceCount)) {
+    sentenceCount = 3;
+  } else {
+    sentenceCount = resolve(sentenceCount);
+  }
+
+  for (; sentenceCount &gt; 0; sentenceCount--) {
+    sentences.push(exports.sentence(null, supplemental));
+  }
+
+  return sentences;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Lorem.text" id="apidoc.element.charlatan.Lorem.text">
+        function <span class="apidocSignatureSpan">charlatan.Lorem.</span>text
+        <span class="apidocSignatureSpan">(paragraphCount, supplemental, glue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">text = function (paragraphCount, supplemental, glue) {
+  if (isNotSet(glue)) {
+    glue = '\n \r\t';
+  }
+
+  return exports.paragraphs(paragraphCount, supplemental).join(glue);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Lorem.word" id="apidoc.element.charlatan.Lorem.word">
+        function <span class="apidocSignatureSpan">charlatan.Lorem.</span>word
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">word = function () {
+  return Helpers.sample(Charlatan.translate('lorem.words'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Lorem.words" id="apidoc.element.charlatan.Lorem.words">
+        function <span class="apidocSignatureSpan">charlatan.Lorem.</span>words
+        <span class="apidocSignatureSpan">(wordCount, supplemental)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">words = function (wordCount, supplemental) {
+
+  if (isNotSet(wordCount)) {
+    wordCount = 3;
+  }
+
+  var words = Charlatan.translate('lorem.words');
+
+  if (supplemental) {
+    words = words.concat(Charlatan.translate('lorem.supplemental'));
+  }
+
+  var result = [];
+
+  for (var i = 0, l = resolve(wordCount); i &lt; l; i++) {
+    result.push(Helpers.sample(words));
+  }
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan.Name" id="apidoc.module.charlatan.Name">module charlatan.Name</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Name.firstName" id="apidoc.element.charlatan.Name.firstName">
+        function <span class="apidocSignatureSpan">charlatan.Name.</span>firstName
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">firstName = function () {
+  return Charlatan.fetch('name.first_name');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Name.lastName" id="apidoc.element.charlatan.Name.lastName">
+        function <span class="apidocSignatureSpan">charlatan.Name.</span>lastName
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lastName = function () {
+  return Charlatan.fetch('name.last_name');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Name.name" id="apidoc.element.charlatan.Name.name">
+        function <span class="apidocSignatureSpan">charlatan.Name.</span>name
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">name = function () {
+  return Charlatan.parse('name.name');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Usage
+-----
+
+```js
+var Charlatan = require('charlatan');
+
+var name    = Charlatan.Name.<span class="apidocCodeKeywordSpan">name</span>();       // Joshua Lemke MD
+var email   = Charlatan.Internet.email();  // glover_ii@voluptas.name
+var company = Charlatan.Company.name();    // Wilkinson LLC
+```
+
+
+Locales
+-------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Name.prefix" id="apidoc.element.charlatan.Name.prefix">
+        function <span class="apidocSignatureSpan">charlatan.Name.</span>prefix
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prefix = function () {
+  return Charlatan.fetch('name.prefix');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Name.suffix" id="apidoc.element.charlatan.Name.suffix">
+        function <span class="apidocSignatureSpan">charlatan.Name.</span>suffix
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">suffix = function () {
+  return Charlatan.fetch('name.suffix');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Name.title" id="apidoc.element.charlatan.Name.title">
+        function <span class="apidocSignatureSpan">charlatan.Name.</span>title
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">title = function () {
+  return Charlatan.fetch('name.title.descriptor') + ' ' +
+          Charlatan.fetch('name.title.level') + ' ' +
+          Charlatan.fetch('name.title.job');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan.Number" id="apidoc.module.charlatan.Number">module charlatan.Number</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Number.between" id="apidoc.element.charlatan.Number.between">
+        function <span class="apidocSignatureSpan">charlatan.Number.</span>between
+        <span class="apidocSignatureSpan">(from, to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">between = function (from, to) {
+  if (typeof from !== 'number') {
+    from = 1;
+  }
+
+  if (typeof to !== 'number') {
+    to = 5000;
+  }
+
+  return Helpers.rand(Math.max(from, to) + 1, Math.min(from, to));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Number.decimal" id="apidoc.element.charlatan.Number.decimal">
+        function <span class="apidocSignatureSpan">charlatan.Number.</span>decimal
+        <span class="apidocSignatureSpan">(l_digits, r_digits)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decimal = function (l_digits, r_digits) {
+  if (typeof r_digits !== 'number') {
+    r_digits = 2;
+  }
+
+  return exports.number(l_digits) + '.' + exports.number(r_digits);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Number.digit" id="apidoc.element.charlatan.Number.digit">
+        function <span class="apidocSignatureSpan">charlatan.Number.</span>digit
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">digit = function () {
+  return String(Helpers.rand(10, 0));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Number.hexadecimal" id="apidoc.element.charlatan.Number.hexadecimal">
+        function <span class="apidocSignatureSpan">charlatan.Number.</span>hexadecimal
+        <span class="apidocSignatureSpan">(digits)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hexadecimal = function (digits) {
+  var result = '';
+
+  for (var i = 0; i &lt; digits; i++) {
+    result += Helpers.rand(16, 0).toString(16);
+  }
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Number.negative" id="apidoc.element.charlatan.Number.negative">
+        function <span class="apidocSignatureSpan">charlatan.Number.</span>negative
+        <span class="apidocSignatureSpan">(from, to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">negative = function (from, to) {
+  if (typeof from !== 'number') {
+    from = -5000;
+  }
+
+  if (typeof to !== 'number') {
+    to = -1;
+  }
+
+  return -Math.abs(exports.between(from, to));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Number.number" id="apidoc.element.charlatan.Number.number">
+        function <span class="apidocSignatureSpan">charlatan.Number.</span>number
+        <span class="apidocSignatureSpan">(digits)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">number = function (digits) {
+  var result = '';
+
+  for (var i = 0; i &lt; digits; i++) {
+    result += Helpers.rand(10, 0).toString(10);
+  }
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Number.positive" id="apidoc.element.charlatan.Number.positive">
+        function <span class="apidocSignatureSpan">charlatan.Number.</span>positive
+        <span class="apidocSignatureSpan">(from, to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">positive = function (from, to) {
+  if (typeof from !== 'number') {
+    from = 1;
+  }
+
+  if (typeof to !== 'number') {
+    to = 5000;
+  }
+
+  return Math.abs(exports.between(from, to));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan.PhoneNumber" id="apidoc.module.charlatan.PhoneNumber">module charlatan.PhoneNumber</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.PhoneNumber.areaCode" id="apidoc.element.charlatan.PhoneNumber.areaCode">
+        function <span class="apidocSignatureSpan">charlatan.PhoneNumber.</span>areaCode
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">areaCode = function () {
+  return Charlatan.fetch('phone_number.area_code');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.PhoneNumber.cellPhone" id="apidoc.element.charlatan.PhoneNumber.cellPhone">
+        function <span class="apidocSignatureSpan">charlatan.PhoneNumber.</span>cellPhone
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cellPhone = function () {
+  return Charlatan.numerify(Charlatan.parse('cell_phone.formats'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.PhoneNumber.exchangeCode" id="apidoc.element.charlatan.PhoneNumber.exchangeCode">
+        function <span class="apidocSignatureSpan">charlatan.PhoneNumber.</span>exchangeCode
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exchangeCode = function () {
+  return Charlatan.fetch('phone_number.exchange_code');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.PhoneNumber.extension" id="apidoc.element.charlatan.PhoneNumber.extension">
+        function <span class="apidocSignatureSpan">charlatan.PhoneNumber.</span>extension
+        <span class="apidocSignatureSpan">(length)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extension = function (length) {
+  if (typeof length !== 'number') {
+    length = 4;
+  }
+
+  return Math.random().toFixed(length).slice(2);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.PhoneNumber.phoneNumber" id="apidoc.element.charlatan.PhoneNumber.phoneNumber">
+        function <span class="apidocSignatureSpan">charlatan.PhoneNumber.</span>phoneNumber
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">phoneNumber = function () {
+  return Charlatan.numerify(Charlatan.parse('phone_number.formats'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.PhoneNumber.subscriberNumber" id="apidoc.element.charlatan.PhoneNumber.subscriberNumber">
+        function <span class="apidocSignatureSpan">charlatan.PhoneNumber.</span>subscriberNumber
+        <span class="apidocSignatureSpan">(length)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subscriberNumber = function (length) {
+  if (typeof length !== 'number') {
+    length = 4;
+  }
+
+  return Math.random().toFixed(length).slice(2);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan.Team" id="apidoc.module.charlatan.Team">module charlatan.Team</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Team.creature" id="apidoc.element.charlatan.Team.creature">
+        function <span class="apidocSignatureSpan">charlatan.Team.</span>creature
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">creature = function () {
+  return Charlatan.fetch('team.creature');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Team.name" id="apidoc.element.charlatan.Team.name">
+        function <span class="apidocSignatureSpan">charlatan.Team.</span>name
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">name = function () {
+  return Charlatan.fetch('team.name');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Usage
+-----
+
+```js
+var Charlatan = require('charlatan');
+
+var name    = Charlatan.Name.<span class="apidocCodeKeywordSpan">name</span>();       // Joshua Lemke MD
+var email   = Charlatan.Internet.email();  // glover_ii@voluptas.name
+var company = Charlatan.Company.name();    // Wilkinson LLC
+```
+
+
+Locales
+-------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.Team.state" id="apidoc.element.charlatan.Team.state">
+        function <span class="apidocSignatureSpan">charlatan.Team.</span>state
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">state = function () {
+  return Helpers.titleize(Charlatan.fetch('faker.address.state'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan.index" id="apidoc.module.charlatan.index">module charlatan.index</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.index.addLocale" id="apidoc.element.charlatan.index.addLocale">
+        function <span class="apidocSignatureSpan">charlatan.index.</span>addLocale
+        <span class="apidocSignatureSpan">(name, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addLocale(name, data) {
+  // if data not set, then check available
+  if (typeof data === 'undefined') {
+    if (!available_locales[name]) {
+      throw new Error('Locale not found:' + name);
+    }
+
+    data = available_locales[name];
+
+    // load base language, if exists
+    var lang = name.split('-')[0];
+
+    if (name !== lang &amp;&amp; available_locales[lang]) {
+      addLocale(lang);
+    }
+  }
+
+  // data in file
+  if (typeof data === 'string') {
+    if (!fs.existsSync(data)) {
+      throw new Error('Config ' + data + ' not found');
+    }
+    data = yaml.safeLoad(fs.readFileSync(data, 'utf8'))[name];
+
+  }
+  locales[name] = data;
+
+  // compatibility layer for ruby Faker: we DON'T use intermediate
+  // level `faker`, but wish to have universal localizations.
+  // So, if `faker` section exists then its children moved 1 level up.
+  if (data.faker) {
+    Object.keys(data.faker).forEach(function (k) {
+      locales[name][k] = data.faker[k];
+    });
+  }
+
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Charlatan.Name.name();
+```
+
+Also you can use your own locale in yaml, json or plain hash.
+
+```js
+var Charlatan = require('charlatan');
+Charlatan.<span class="apidocCodeKeywordSpan">addLocale</span>(myLocaleName, myLocaleFile);
+Charlatan.setLocale(myLocaleName);
+Charlatan.Name.name();
+```
+
+__Note__: If phrase not found in current locale, charlatan tries to then
+fallback into to base language, and then to `en`. For example `ru-RU -&gt; ru -&gt; en`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.index.bothify" id="apidoc.element.charlatan.index.bothify">
+        function <span class="apidocSignatureSpan">charlatan.index.</span>bothify
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bothify = function (source) {
+  return exports.letterify(exports.numerify(source));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return source.replace(/\?/g, function () {
+    return Helpers.sample(ULetters);
+  });
+};
+
+
+/**
+ * Charlatan.<span class="apidocCodeKeywordSpan">bothify</span>(source) -&gt; string
+ * - source (string): source string
+ *
+ * Perform both `letterify` and `numerify` operations.
+ **/
+exports.bothify = function (source) {
+  return exports.letterify(exports.numerify(source));
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.index.fetch" id="apidoc.element.charlatan.index.fetch">
+        function <span class="apidocSignatureSpan">charlatan.index.</span>fetch
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fetch = function (key) {
+  var fetched = exports.translate(key);
+
+  if (Array.isArray(fetched)) {
+    fetched = Helpers.sample(fetched);
+  }
+
+  if (fetched.match(/^\//) &amp;&amp; fetched.match(/\/$/)) {
+    fetched = exports.regexify(fetched);
+  }
+
+  return fetched;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+return result;
+};
+
+
+/**
+ * Charlatan.<span class="apidocCodeKeywordSpan">fetch</span>(key) -&gt; mixed
+ * - key (string): key in locale, for example `address.city_prefix`
+ *
+ * Helper for the common approach of grabbing a translation
+ * with an array of values and selecting one of them.
+ **/
+var fetch = exports.fetch = function (key) {
+var fetched = exports.translate(key);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.index.getAllLocales" id="apidoc.element.charlatan.index.getAllLocales">
+        function <span class="apidocSignatureSpan">charlatan.index.</span>getAllLocales
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAllLocales = function () {
+  return Object.keys(locales);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ **/
+exports.getLocale = function () {
+  return current_locale;
+};
+
+
+/**
+ * Charlatan.<span class="apidocCodeKeywordSpan">getAllLocales</span>() -&gt; [String]
+ *
+ * Get the list of all available locales
+ **/
+exports.getAllLocales = function () {
+  return Object.keys(locales);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.index.getLocale" id="apidoc.element.charlatan.index.getLocale">
+        function <span class="apidocSignatureSpan">charlatan.index.</span>getLocale
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLocale = function () {
+  return current_locale;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+  current_locale = name;
+  return true;
+};
+
+
+/**
+ * Charlatan.<span class="apidocCodeKeywordSpan">getLocale</span>() -&gt; String
+ *
+ * Get current locale
+ **/
+exports.getLocale = function () {
+  return current_locale;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.index.letterify" id="apidoc.element.charlatan.index.letterify">
+        function <span class="apidocSignatureSpan">charlatan.index.</span>letterify
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">letterify = function (source) {
+  return source.replace(/\?/g, function () {
+    return Helpers.sample(ULetters);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  .replace(/\#/g, function () {
+    return Math.floor(Helpers.rand(10, 0));
+  });
+};
+
+
+/**
+ * Charlatan.<span class="apidocCodeKeywordSpan">letterify</span>(source) -&gt; string
+ * - source (string): source string
+ *
+ * Find `?` symbol and replace it with random char from [A..Z]
+ **/
+exports.letterify = function (source) {
+return source.replace(/\?/g, function () {
+  return Helpers.sample(ULetters);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.index.numerify" id="apidoc.element.charlatan.index.numerify">
+        function <span class="apidocSignatureSpan">charlatan.index.</span>numerify
+        <span class="apidocSignatureSpan">(source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">numerify = function (source) {
+  // make sure numerify results donâ€™t start with a zero
+  return source
+    .replace(/\#/, function () {
+      return Math.floor(Helpers.rand(10, 1));
+    })
+    .replace(/\#/g, function () {
+      return Math.floor(Helpers.rand(10, 0));
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  return text;
+});
+};
+
+
+/**
+ * Charlatan.<span class="apidocCodeKeywordSpan">numerify</span>(source) -&gt; string
+ * - source (string): source string
+ *
+ * Find `#` symbol and replace it with random number
+ **/
+exports.numerify = function (source) {
+// make sure numerify results donâ€™t start with a zero
+return source
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.index.parse" id="apidoc.element.charlatan.index.parse">
+        function <span class="apidocSignatureSpan">charlatan.index.</span>parse
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (key) {
+  var re = /#\{([A-Za-z]+(?:\.))?([^\}]+)\}/g;
+
+  return fetch(key).replace(re, function (match, kls, method) {
+    var text = '';
+
+    // If the token had a class Prefix (e.g., Name.first_name)
+    // take it, otherwise use base namespace part
+    if (!kls) {
+      kls = exports.Helpers.capitalize(key.split('.')[0]);
+    } else {
+      kls = kls.slice(0, -1);
+    }
+    // If the class has the method, call it, otherwise
+    // fetch the translation
+    if (exports[kls] &amp;&amp;
+        typeof exports[kls][snake2camelcase(method)] === 'function') {
+
+      text += exports[kls][snake2camelcase(method)].call(exports[kls]);
+    } else {
+      text += exports.fetch(kls.toLowerCase() + '.' + method);
+    }
+
+    return text;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  return fetched;
+};
+
+
+/**
+ * Charlatan.<span class="apidocCodeKeywordSpan">parse</span>(key) -&gt; string
+ * - key (string): key in locale, for example `address.city_prefix`
+ *
+ * Load formatted strings from the locale, "parsing" them
+ * into method calls that can be used to generate a
+ * formatted translation: e.g., "#{first_name} #{last_name}".
+ **/
+exports.parse = function (key) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.index.regexify" id="apidoc.element.charlatan.index.regexify">
+        function <span class="apidocSignatureSpan">charlatan.index.</span>regexify
+        <span class="apidocSignatureSpan">(re)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">regexify = function (re) {
+  // Handle either a Regexp or a String that looks like a Regexp
+  if (Object.prototype.toString.call(re) === '[object RegExp]') {
+    re = re.source;
+  }
+
+  // "baz", 2, 3 -&gt; "bazbaz" or "bazbazbaz"
+  function repeatRange(_unused, what, from, to) {
+    return new Array(Helpers.rand(Number(to) + 1, Number(from)) + 1).join(what);
+  }
+
+  return re
+    // Ditch the anchors
+    .replace(/^\/?\^?/, '').replace(/\$?\/?$/, '')
+
+    // All {2} become {2,2} and ? become {0,1}
+    .replace(/\{(\d+)\}/g, '{$1,$1}').replace(/\?/g, '{0,1}')
+
+    // [12]{1,2} becomes [12] or [12][12]
+    .replace(/(\[[^\]]+\])\{(\d+),(\d+)\}/g, repeatRange)
+
+    // (12|34){1,2} becomes (12|34) or (12|34)(12|34)
+    .replace(/(\([^\)]+\))\{(\d+),(\d+)\}/g, repeatRange)
+
+    // A{1,2} becomes A or AA or \d{3} becomes \d\d\d
+    .replace(/(\\?.)\{(\d+),(\d+)\}/g, repeatRange)
+
+    // (this|that) becomes 'this' or 'that'
+    .replace(/\((.*?)\)/g, function (match) {
+      return Helpers.sample(match.replace(/[\(\)]/g, '').split('|'));
+    })
+
+    // All A-Z inside of [] become C (or X, or whatever)
+    .replace(/\[([^\]]+)\]/g, function (match) {
+      return match.replace(/(\w\-\w)/g, function (range) {
+        range = range.split('-');
+
+        return Helpers.sample(Helpers.range(range[0], range[1]));
+      });
+    })
+
+    // All [ABC] become B (or A or C)
+    .replace(/\[([^\]]+)\]/g, function (m, str) {
+      return Helpers.sample(str.split(''));
+    })
+
+    .replace(/\\d/g, function () {
+      return Helpers.sample(Numbers);
+    })
+
+    .replace(/\\w/g, function () {
+      return Helpers.sample(Letters);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var fetched = exports.translate(key);
+
+  if (Array.isArray(fetched)) {
+    fetched = Helpers.sample(fetched);
+  }
+
+  if (fetched.match(/^\//) &amp;&amp; fetched.match(/\/$/)) {
+    fetched = exports.<span class="apidocCodeKeywordSpan">regexify</span>(fetched);
+  }
+
+  return fetched;
+};
+
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.index.setLocale" id="apidoc.element.charlatan.index.setLocale">
+        function <span class="apidocSignatureSpan">charlatan.index.</span>setLocale
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setLocale = function (name) {
+  if (!name) {
+    name = base_locale;
+  }
+  if (!locales[name]) {
+    addLocale(name);
+  }
+  current_locale = name;
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+solution of this problem.
+
+Currently available locales are [here](https://github.com/nodeca/charlatan/tree/master/lib/locales),
+`en` is [default](https://github.com/nodeca/charlatan/blob/master/lib/locales/en.yml).
+
+```js
+var Charlatan = require('charlatan');
+Charlatan.<span class="apidocCodeKeywordSpan">setLocale</span>('en-US');
+Charlatan.Name.name();
+```
+
+Also you can use your own locale in yaml, json or plain hash.
+
+```js
+var Charlatan = require('charlatan');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.index.translate" id="apidoc.element.charlatan.index.translate">
+        function <span class="apidocSignatureSpan">charlatan.index.</span>translate
+        <span class="apidocSignatureSpan">(key, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">translate = function (key, options) {
+  if (!options) { options = {}; }
+
+  var locale = options.locale || current_locale;
+  var lang = locale.split('-')[0];
+  var path = key.split('.');
+  var result = getValue(locales[locale], path);
+
+  // fallback to root lang (`pt-BR` -&gt; `pt`, but it can be missed)
+  if (typeof result === 'undefined' &amp;&amp; lang !== locale) {
+    if (locales[lang]) {
+      result = getValue(locales[lang], path);
+    }
+  }
+
+  // fallback to base lang (en)
+  if (typeof result === 'undefined') {
+    result = getValue(locales[base_locale], path);
+  }
+
+  // oops
+  if (typeof result === 'undefined') {
+    throw new Error('Invalid path: ' + key);
+  }
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+**/
+exports.getAllLocales = function () {
+ return Object.keys(locales);
+};
+
+
+/**
+* Charlatan.<span class="apidocCodeKeywordSpan">translate</span>(key) -&gt; mixed
+* - key (string): key in locale, for example `address.city_prefix`
+*
+* Returns a phrase from the locale.
+*
+* Fallbacks to base language (and then to `en`)
+*   if it was not found: `ru-RU -&gt; ru -&gt; en`
+**/
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan.locales" id="apidoc.module.charlatan.locales">module charlatan.locales</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.locales.addLocale" id="apidoc.element.charlatan.locales.addLocale">
+        function <span class="apidocSignatureSpan">charlatan.locales.</span>addLocale
+        <span class="apidocSignatureSpan">(name, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addLocale(name, data) {
+  // if data not set, then check available
+  if (typeof data === 'undefined') {
+    if (!available_locales[name]) {
+      throw new Error('Locale not found:' + name);
+    }
+
+    data = available_locales[name];
+
+    // load base language, if exists
+    var lang = name.split('-')[0];
+
+    if (name !== lang &amp;&amp; available_locales[lang]) {
+      addLocale(lang);
+    }
+  }
+
+  // data in file
+  if (typeof data === 'string') {
+    if (!fs.existsSync(data)) {
+      throw new Error('Config ' + data + ' not found');
+    }
+    data = yaml.safeLoad(fs.readFileSync(data, 'utf8'))[name];
+
+  }
+  locales[name] = data;
+
+  // compatibility layer for ruby Faker: we DON'T use intermediate
+  // level `faker`, but wish to have universal localizations.
+  // So, if `faker` section exists then its children moved 1 level up.
+  if (data.faker) {
+    Object.keys(data.faker).forEach(function (k) {
+      locales[name][k] = data.faker[k];
+    });
+  }
+
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Charlatan.Name.name();
+```
+
+Also you can use your own locale in yaml, json or plain hash.
+
+```js
+var Charlatan = require('charlatan');
+Charlatan.<span class="apidocCodeKeywordSpan">addLocale</span>(myLocaleName, myLocaleFile);
+Charlatan.setLocale(myLocaleName);
+Charlatan.Name.name();
+```
+
+__Note__: If phrase not found in current locale, charlatan tries to then
+fallback into to base language, and then to `en`. For example `ru-RU -&gt; ru -&gt; en`.
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.charlatan.locales_browser" id="apidoc.module.charlatan.locales_browser">module charlatan.locales_browser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.charlatan.locales_browser.addLocale" id="apidoc.element.charlatan.locales_browser.addLocale">
+        function <span class="apidocSignatureSpan">charlatan.locales_browser.</span>addLocale
+        <span class="apidocSignatureSpan">(name, data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addLocale(name, data) {
+  // if data not set, then check available
+  if (typeof data === 'undefined') {
+    if (Object.keys(locales).indexOf(name) === -1) {
+      throw new Error('Locale not found:' + name);
+    }
+
+    // Do nothing because all locales already loaded
+    return true;
+  }
+
+  // data in file
+  if (typeof data === 'string') {
+    throw new Error('Charlatan: loading from file not supported in browser');
+  }
+
+  locales[name] = data;
+
+  // compatibility layer for ruby Faker: we DON'T use intermediate
+  // level `faker`, but wish to have universal localizations.
+  // So, if `faker` section exists then its children moved 1 level up.
+  if (data.faker) {
+    Object.keys(data.faker).forEach(function (k) {
+      locales[name][k] = data.faker[k];
+    });
+  }
+
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Charlatan.Name.name();
+```
+
+Also you can use your own locale in yaml, json or plain hash.
+
+```js
+var Charlatan = require('charlatan');
+Charlatan.<span class="apidocCodeKeywordSpan">addLocale</span>(myLocaleName, myLocaleFile);
+Charlatan.setLocale(myLocaleName);
+Charlatan.Name.name();
+```
+
+__Note__: If phrase not found in current locale, charlatan tries to then
+fallback into to base language, and then to `en`. For example `ru-RU -&gt; ru -&gt; en`.
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
